@@ -34,10 +34,21 @@ public class Square {
 
     public void setStatus(int status) {
         this.status = status;
+        if(status == EMPTY){
+            isEmpty = true;
+        }
+        else{
+            isEmpty = false;
+        }
     }
 
     public void setEmpty(boolean empty) {
         isEmpty = empty;
+    }
+
+
+    public String toString(){
+        return ""+this.getStatus();
     }
 
 }
