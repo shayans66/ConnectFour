@@ -129,6 +129,7 @@ public class Grid {
             status = grid[0][c].getStatus();
         }
 
+        // check for diaganol matches
 
         return Square.EMPTY;
     }
