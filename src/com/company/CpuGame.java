@@ -74,7 +74,7 @@ public class CpuGame {
 
         grid.setCol(col, status);
     }
-    
+
     public void getBotTurn(int status){
         // 6 Rows, 7 Columns
         System.out.print("It is the bot's turn! Press enter to continue. ");

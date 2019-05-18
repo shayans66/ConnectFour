@@ -184,8 +184,48 @@ public class Grid {
         return Square.EMPTY;
     }
 
-    // Bot Stuff
+    /**
+     *
+     * @param row
+     * @param col
+     * @return
+     * returns whether a piece can be put at this specific index
+     */
+    public boolean canPieceBePutHere(int row, int col){
+        for(int r=ROWS-1; r>=0; r--){
+            if( grid[r][col-1].getStatus() == Square.EMPTY ) {
+                return true;
+            }
 
+        }
+        return false;
+    }
+
+    /**
+     *
+     * @param col
+     * @return
+     * the row index in which an inserted piece would go
+     * returns -1 if the column is full, thus piece cannot go in
+     */
+    public int getRowInCol(int col){
+        for(int r=ROWS-1; r>=0; r--){
+            if( grid[r][col-1].getStatus() == Square.EMPTY ) {
+                return r+1;
+            }
+
+        }
+        return -1;
+    }
+
+    /**
+     * If there is 3 in a row for either side, and a blank piece after, the bot will put a piece there
+     * @return
+     * column of move
+     */
+    public int getBotMove(){
+        
+    }
 
 
 }
