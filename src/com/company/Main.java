@@ -5,7 +5,12 @@ public class Main {
     public static void main(String[] args) {
         //System.out.println("jdslj");
 
-        TwoPlayerGame game = new TwoPlayerGame();
+
+
+        // TwoPlayerGame game = new TwoPlayerGame();
+        // game.startGame();
+
+        CpuGame game = new CpuGame();
         game.startGame();
     }
 }
