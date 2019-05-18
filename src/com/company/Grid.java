@@ -18,6 +18,8 @@ public class Grid {
         }
     }
 
+
+
     public void printGrid(){
         for(int i=0; i<ROWS; i++){
             for(int j=0; j<COLS; j++){
@@ -181,6 +183,9 @@ public class Grid {
         }
         return Square.EMPTY;
     }
+
+    // Bot Stuff
+
 
 
 }
