@@ -121,7 +121,5 @@ public class CpuGame {
 
         grid.setCol(col, status);
     }
-    public void recordRandomBotMove(){
 
-    }
 }
