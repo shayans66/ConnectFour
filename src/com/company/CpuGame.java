@@ -87,11 +87,21 @@ public class CpuGame {
         //input.nextLine();
         //System.out.println("**");
 
-        int[] arr = grid.getBotMove();
-
-        if( ( grid.hasNumInARow(Square.X, 3) || grid.hasNumInARow(Square.O, 3) ) && arr!=null  ){
 
 
+
+        if( grid.hasNumInARow(status, 3)   ){
+            int[] arr = grid.getBotMove();
+            if( arr==null ){
+                int col = 1 + rand.nextInt(7);
+
+                while( grid.isColFull(col)){
+                    col = 1 + rand.nextInt(7);
+                }
+
+                grid.setCol(col, status);
+                return;
+            }
             int row = arr[0];
             int col = arr[1];
 
@@ -110,7 +120,6 @@ public class CpuGame {
         }
 
         grid.setCol(col, status);
-
     }
 
 }

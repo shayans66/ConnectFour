@@ -9,7 +9,6 @@ public class TwoPlayerGame {
     private Grid grid;
 
     public TwoPlayerGame() {
-
         grid = new Grid();
     }
 
