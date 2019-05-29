@@ -112,19 +112,22 @@ public class Grid {
                 }
                 else{
                     counter = 0;
-
                 }
-
             }
             // initialize back after going back each time
             counter = 0;
 
         }
+<<<<<<< HEAD
+        counter = 0;
+=======
 
+        counter = 0;
+
+>>>>>>> 707e214594af068a72de3a8d8dbb6f6e7b30b5c6
         // check for vertical matches
         for(int c=0; c<grid[0].length; c++){
             for(int r=0; r<grid.length; r++){
-
                 if(grid[r][c].getStatus() == status){
                     counter++;
                     if(counter == num){
@@ -136,9 +139,12 @@ public class Grid {
                 }
 
             }
+
             // initialize back after going back each time
             counter = 0;
         }
+
+
 
         // check for diaganol matches
         //00 11 22 33
@@ -164,6 +170,8 @@ public class Grid {
             }
             counter = 0;
         }
+
+
         // check inverse diaganolly (bottom up)
         //30 21 12 03
         //31 22 13 04

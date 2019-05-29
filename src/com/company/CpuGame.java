@@ -16,11 +16,53 @@ public class CpuGame {
 
     public void startGame(){
         System.out.println("-----------------------------------");
-        System.out.println("Welcome to CPU Connect Four!");
+        System.out.println("Welcome to Single Player Connect Four!");
         System.out.println("-----------------------------------");
 
-        grid.printGrid();
+        System.out.println("Would you like to play first or second?");
+        System.out.println("Please enter 1 for first and 2 for second.");
 
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        if(n % 2 == 1) {
+            System.out.println("you have chosen to play first");
+            grid.printGrid();
+            playerFirst();
+        } else {
+            System.out.println("you have chosen to play second");
+            grid.printGrid();
+            playerSecond();
+        }
+    }
+
+    public void playerFirst() {
+        while( !grid.isGridFull() && !grid.isThereWin()){
+
+            // Ask for O's turn ( THE PLAYER )
+            askForTurn(Square.O);
+            //getBotTurn(Square.X);
+
+            grid.printGrid();
+
+            if(grid.isGridFull() || grid.isThereWin()){
+                break;
+            }
+
+            // Ask for bot's turn (x)
+            getBotTurn(Square.X);
+
+            grid.printGrid();
+        }
+
+
+
+        String winner = getWinner();
+        System.out.print(winner);
+
+
+    }
+
+    public void playerSecond() {
         while( !grid.isGridFull() && !grid.isThereWin()){
 
             // Ask for X's turn ( THE BOT )
@@ -39,16 +81,24 @@ public class CpuGame {
             grid.printGrid();
         }
 
-        String winner = "";
+        String winner = getWinner();
+        System.out.print(winner);
+    }
 
+    public String getWinner() {
+        String winner = "";
         if( grid.getWinner()==Square.X){
-            winner = "X";
+            winner = "The CPU is";
         }
         if( grid.getWinner()==Square.O){
-            winner = "O";
+            winner = "You are";
+        } if(grid.isGridFull() == true) {
+            return ("There are no more moves available. It's a tie");
         }
 
-        System.out.println(winner + " is the winner! Congratulations to "+winner);
+        winner = (winner + " the winner! Congratulations to "+ winner);
+        return winner;
+
     }
 
     public void askForTurn(int status){
@@ -66,7 +116,7 @@ public class CpuGame {
             col = input.nextInt();
             System.out.println();
         }
-        while(grid.isColFull(col) == true ){
+        while(grid.isColFull(col)){
             System.out.print("This column is full, try again: ");
             col = input.nextInt();
             System.out.println();
@@ -87,21 +137,11 @@ public class CpuGame {
         //input.nextLine();
         //System.out.println("**");
 
+        int[] arr = grid.getBotMove();
+
+        if( ( grid.hasNumInARow(Square.X, 3) || grid.hasNumInARow(Square.O, 3) ) && arr!=null  ){
 
 
-
-        if( grid.hasNumInARow(status, 3)   ){
-            int[] arr = grid.getBotMove();
-            if( arr==null ){
-                int col = 1 + rand.nextInt(7);
-
-                while( grid.isColFull(col)){
-                    col = 1 + rand.nextInt(7);
-                }
-
-                grid.setCol(col, status);
-                return;
-            }
             int row = arr[0];
             int col = arr[1];
 
@@ -120,6 +160,7 @@ public class CpuGame {
         }
 
         grid.setCol(col, status);
+
     }
 
 }
