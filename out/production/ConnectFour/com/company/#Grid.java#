@@ -118,7 +118,18 @@ public class Grid {
             counter = 0;
 
         }
+<<<<<<< HEAD
+        counter = 0;
+=======
 
+        counter = 0;
+
+<<<<<<< HEAD
+>>>>>>> 707e214594af068a72de3a8d8dbb6f6e7b30b5c6
+=======
+        counter = 0;
+
+>>>>>>> 707e214594af068a72de3a8d8dbb6f6e7b30b5c6
         // check for vertical matches
         for(int c=0; c<grid[0].length; c++){
             for(int r=0; r<grid.length; r++){
@@ -265,9 +276,6 @@ public class Grid {
 
         // check for horizontal matches
         for(int r=0; r<grid.length; r++){
-
-            //status = g
-
             for(int c=0; c<grid[0].length; c++){
 
                 if(grid[r][c].getStatus() == status){
@@ -289,7 +297,7 @@ public class Grid {
             }
             // initialize back after going back each time
             counter = 0;
-            status = grid[r][0].getStatus();
+
         }
 
         // check for vertical matches
@@ -311,7 +319,6 @@ public class Grid {
             }
             // initialize back after going back each time
             counter = 0;
-            status = grid[0][c].getStatus();
         }
 
         // check for diaganol matches
@@ -337,9 +344,7 @@ public class Grid {
                         counter = 0;
                     }
                 }
-                status = grid[r][c].getStatus();
             }
-
             counter = 0;
         }
         // check inverse diaganolly (bottom up)
@@ -365,14 +370,13 @@ public class Grid {
                         counter = 0;
                     }
                 }
-                status = grid[r][c].getStatus();
             }
             counter = 0;
         }
 
 
 
-        return arr;
+        return null;
     }
 
 
