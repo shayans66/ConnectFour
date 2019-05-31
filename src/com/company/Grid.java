@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * 2d array of square objects
+ * Holds game together
+ */
 public class Grid {
     // height
     public final int ROWS = 6;

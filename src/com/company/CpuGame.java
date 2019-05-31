@@ -85,18 +85,20 @@ public class CpuGame {
         System.out.print(winner);
     }
 
+    // returns winner message, if there is win
     public String getWinner() {
         String winner = "";
+
         if( grid.getWinner()==Square.X){
-            winner = "The CPU is";
+            winner = "X";
         }
         if( grid.getWinner()==Square.O){
-            winner = "You are";
+            winner = "O";
         } if(grid.isGridFull() == true) {
             return ("There are no more moves available. It's a tie");
         }
 
-        winner = (winner + " the winner! Congratulations to "+ winner);
+        winner = (winner + " is the winner! Congratulations to "+ winner);
         return winner;
 
     }
@@ -142,8 +144,8 @@ public class CpuGame {
         if( ( grid.hasNumInARow(Square.X, 3) || grid.hasNumInARow(Square.O, 3) ) && arr!=null  ){
 
 
-                    int row = arr[0];
-                    int col = arr[1];
+            int row = arr[0];
+            int col = arr[1];
 
             if(grid.canPieceBePutHere(row,col)){
 
