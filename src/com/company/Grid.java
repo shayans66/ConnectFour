@@ -217,8 +217,8 @@ public class Grid {
 
     /**
      *
-     * @param row
-     * @param col
+     * @param row (not array index)
+     * @param col (not array index)
      * @return
      * returns whether a piece can be put at this specific index
      */
