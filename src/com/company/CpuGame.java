@@ -139,7 +139,7 @@ public class CpuGame {
 
         int[] arr = grid.getBotMove();
 
-                if( ( grid.hasNumInARow(Square.X, 3) || grid.hasNumInARow(Square.O, 3) ) && arr!=null  ){
+        if( ( grid.hasNumInARow(Square.X, 3) || grid.hasNumInARow(Square.O, 3) ) && arr!=null  ){
 
 
                     int row = arr[0];

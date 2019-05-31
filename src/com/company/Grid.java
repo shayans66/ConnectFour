@@ -233,6 +233,8 @@ public class Grid {
      * @return
      * returns the row index in which an inserted piece would go.
      * returns -1 if the column is full, thus piece cannot go in
+     *
+     * if col==1 and theres an empty space there, it returns 1 (NOT 0)
      */
     public int getRowInCol(int col){
         if(col<1 || col>7){
